@@ -23,19 +23,15 @@ router.get('/download/:filename', (req, res) => {
 });
 
 // Download file with custom name
-router.get('/updates/:window_update.json', (req, res) => {
-  const { filename } = req.params;
-  const filePath = path.join(__dirname, '../uploads', filename);
+router.get('/updates/window_update.json', (req, res) => {
+  const filePath = path.join(__dirname, '../../uploads', "window_update.json");
+  console.log(filePath)
 
   if (!fs.existsSync(filePath)) {
     return res.status(404).json({ error: 'File not found' });
   }
 
-  // res.setHeader('Content-Disposition', `attachment; filename=${customName}`);
-  res.setHeader('Content-Type', 'application/octet-stream');
-
-  const fileStream = fs.createReadStream(filePath);
-  fileStream.pipe(res);
+  res.download(filePath);
 });
 
 module.exports = router;
