@@ -34,4 +34,26 @@ router.get('/updates/window_update.json', (req, res) => {
   res.download(filePath);
 });
 
+router.get('/updates/update_enctool.zip', (req, res) => {
+  const filePath = path.join(__dirname, '../../uploads', "update_enctool.zip");
+  console.log(filePath)
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ error: 'File not found' });
+  }
+
+  res.download(filePath);
+});
+
+router.get('/updates/update_viewer.zip', (req, res) => {
+  const filePath = path.join(__dirname, '../../uploads', "update_viewer.zip");
+  console.log(filePath)
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ error: 'File not found' });
+  }
+
+  res.download(filePath);
+});
+
 module.exports = router;
