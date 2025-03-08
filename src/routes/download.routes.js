@@ -56,4 +56,38 @@ router.get('/updates/update_viewer.zip', (req, res) => {
   res.download(filePath);
 });
 
+// Download file with custom name
+router.get('/updates/mac_update.json', (req, res) => {
+  const filePath = path.join(__dirname, '../../uploads', "window_update.json");
+  console.log(filePath)
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ error: 'File not found' });
+  }
+
+  res.download(filePath);
+});
+
+router.get('/updates/mac_enctool.zip', (req, res) => {
+  const filePath = path.join(__dirname, '../../uploads', "mac_enctool.zip");
+  console.log(filePath)
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ error: 'File not found' });
+  }
+
+  res.download(filePath);
+});
+
+router.get('/updates/mac_viewer.zip', (req, res) => {
+  const filePath = path.join(__dirname, '../../uploads', "mac_viewer.zip");
+  console.log(filePath)
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ error: 'File not found' });
+  }
+
+  res.download(filePath);
+});
+
 module.exports = router;
