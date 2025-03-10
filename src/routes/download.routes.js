@@ -24,7 +24,7 @@ router.get('/download/:filename', (req, res) => {
 
 // Download file with custom name
 router.get('/updates/window_update.json', (req, res) => {
-  const filePath = path.join(__dirname, '../../uploads', "window_update.json");
+  const filePath = path.join(__dirname, '../../uploads/window', "window_update.json");
   console.log(filePath)
 
   if (!fs.existsSync(filePath)) {
@@ -34,8 +34,8 @@ router.get('/updates/window_update.json', (req, res) => {
   res.download(filePath);
 });
 
-router.get('/updates/update_enctool.zip', (req, res) => {
-  const filePath = path.join(__dirname, '../../uploads', "update_enctool.zip");
+router.get('/updates/window_enctool.zip', (req, res) => {
+  const filePath = path.join(__dirname, '../../uploads/window', "window_enctool.zip");
   console.log(filePath)
 
   if (!fs.existsSync(filePath)) {
@@ -45,8 +45,8 @@ router.get('/updates/update_enctool.zip', (req, res) => {
   res.download(filePath);
 });
 
-router.get('/updates/update_viewer.zip', (req, res) => {
-  const filePath = path.join(__dirname, '../../uploads', "update_viewer.zip");
+router.get('/updates/window_viewer.zip', (req, res) => {
+  const filePath = path.join(__dirname, '../../uploads/window', "window_viewer.zip");
   console.log(filePath)
 
   if (!fs.existsSync(filePath)) {
@@ -58,7 +58,7 @@ router.get('/updates/update_viewer.zip', (req, res) => {
 
 // Download file with custom name
 router.get('/updates/mac_update.json', (req, res) => {
-  const filePath = path.join(__dirname, '../../uploads', "window_update.json");
+  const filePath = path.join(__dirname, '../../uploads/mac', "mac_update.json");
   console.log(filePath)
 
   if (!fs.existsSync(filePath)) {
@@ -69,7 +69,7 @@ router.get('/updates/mac_update.json', (req, res) => {
 });
 
 router.get('/updates/mac_enctool.zip', (req, res) => {
-  const filePath = path.join(__dirname, '../../uploads', "mac_enctool.zip");
+  const filePath = path.join(__dirname, '../../uploads/mac', "mac_enctool.zip");
   console.log(filePath)
 
   if (!fs.existsSync(filePath)) {
@@ -80,7 +80,7 @@ router.get('/updates/mac_enctool.zip', (req, res) => {
 });
 
 router.get('/updates/mac_viewer.zip', (req, res) => {
-  const filePath = path.join(__dirname, '../../uploads', "mac_viewer.zip");
+  const filePath = path.join(__dirname, '../../uploads/mac', "mac_viewer.zip");
   console.log(filePath)
 
   if (!fs.existsSync(filePath)) {
